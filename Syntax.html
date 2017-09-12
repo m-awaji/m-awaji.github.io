@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>An Introduction to Description Logic</title>
+<link href="/Users/mariam/Desktop/implementation/style.css"" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/Users/mariam/Desktop/implementation/nav.jquery.min.js"></script>
+  <style type="text/css">
+
+  a{
+    color: blue;
+    cursor: pointer;}
+  </style>
+  <script type="text/javascript">
+    function myFunction1() {
+    document.getElementById("answers").innerHTML = "1. Professor &#x2293; Academic (or Academic &#x2293; Professor).<br>2. Professor &#x2293; &#172;Academic (or &#172;Academic &#x2293; Professor).<br> 3. Professor &#x2293; &#8707;wins.Prize.<br> 4. Professor &#x2293;  &#8704;publishes.Journal.<br>5. &#8707;teaches.(Course &#x2293; Computer). ";
+
+}
+  </script>
+</head>
+<body>
+<div class="container">
+<header>
+   <h1>An Introduction to Description Logics</h1>
+</header>
+    <nav>
+   <ul class="nav">
+   <li> <a href="/Users/mariam/Desktop/implementation/index.html">Welcome!</a> </li>
+    <li> <a href="/Users/mariam/Desktop/implementation/Introduction.html">Introduction</a> </li>
+     <li> <a href="/Users/mariam/Desktop/implementation/DL_Notation.html">DL Notation</a></li>
+     <li> <a href="/Users/mariam/Desktop/implementation/section3.html">References</a></li>
+    </ul>
+   </nav>
+
+   <article>
+<!-- .....................................Syntax Block................................... -->
+<p style="text-align: center;">
+<a href="/Users/mariam/Desktop/implementation/building_blocks.html" id="displayone">Building Blocks</a>&nbsp; &nbsp;
+<a href="/Users/mariam/Desktop/implementation/Syntax.html" id="displaytwo">Syntax</a>&nbsp; &nbsp;
+<a  href="/Users/mariam/Desktop/implementation/Semantics.html" id="displaythree">Semantics</a>&nbsp; &nbsp;
+</p>
+<div class="BB">
+<h3>How to build concept descriptions (compound concepts)?</h3>
+<div Class="box3">
+<p>We already know what are the concept names and the role names and you may have been able to identify  them in <strong>Examples 3 and 4</strong>.</br> </br>Now, to build <strong><i>concept descriptions</i></strong> we need to learn the syntax, i.e. how to form a compound concept in ALC and the semantics, i.e. the meaning.</p>
+</div>
+<h3>ALC Syntax</h3>
+<div class="box1">
+<strong style="color: #008989">Syntax:</strong> is the set of rules that defines the combinations of symbols that are legal in ALC.
+<p><strong>For example,</strong> if we want to describe a Male Professor, we need to use constructors to build a compound concept that is a conjunction of both Male concept and Professor concept.</p>
+<p>The following table shows the constructors supported by ALC for C and D as concept names and R as a role.</p>
+  <table class="centerTable">
+  <tr class="titles">
+    <th>Constructor</th>
+    <th>Syntax</th> 
+    <th>Example</th>
+    <th>Meaning</th>
+  </tr>
+   <tr>
+    <td>conjunction</td>
+    <td>C &#x2293; D</td>
+    <td>Professor &#x2293; Male</td>
+    <td>The set of elements that are both Professors and Males.</td>
+  </tr>
+   <tr>
+    <td>disjunction</td>
+    <td> C &#x2294; D</td>
+    <td>Professor &#x2294; Doctor </td>
+    <td>The set of elements that are either Professors or Researchers.</td>
+  </tr>
+   <tr>
+    <td>negation</td>
+    <td>&#172;C</td>
+    <td>&#172;Student</td>
+    <td>The set of all elements that are not Students.</td>
+  </tr>
+   <tr>
+    <td>exist restrict. (Some) </td>
+    <td>&#8707;R.C</td>
+    <td>&#8707;teaches.Course</td>
+    <td>The set of elements that teach(es) at least one Course.</td>
+  </tr>
+   <tr>
+    <td>value restrict. (All) </td>
+    <td>&#8704;R.C</td>
+    <td>&#8704;teaches.Cs1</td>
+     <td>The set of elements who teach(es) only Cs1.</td>
+  </tr>
+</table>
+<p style="text-align: center">Table 1: ALC constructors</p>
+<br>
+</div><br>
+<div id="Note3" class="notes">
+<p><strong><i>Note 3: </i></strong></br>A set of available constructors depends on the particular DL variant. In this study we are focusing only on the ALC variant of DL.</p></div><br>
+<div class="Activity">
+<h4 style="color: #FC4B63">Activity 1</h4>
+<p>Using the constructors in <strong>Table 1</strong> and the following concept names, try to build concept descriptions from the following English sentences, and then click the button below to compare your answers with the solution.<br><br>
+Concept names: <strong>Person, Academic, Journals, Books, Computer, Prize and Course.</strong></p>
+<ol>
+<li>Academic professors. </li>
+<li>Non-academic professors. </li>
+<li>Professors who win prizes. </li>
+<li>Professors who publish only journals. </li>
+<li>Who teaches computer courses. </li>
+</ol>
+<button id="ac1btn" style="background-color: #FC4B63; color:white;" onclick="myFunction1()">Solution</button>
+<p id="answers"></p>
+</div></br>
+</div></br>
+<a href="/Users/mariam/Desktop/implementation/building_blocks.html" id="prev" class="next">prev</a>
+<a href="/Users/mariam/Desktop/implementation/Semantics.html" id="next" class="next">next</a></br></br>
+</article>
+
+<footer>Copyright &copy; </footer>
+
+</body>
+</html>

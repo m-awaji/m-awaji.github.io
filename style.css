@@ -1,0 +1,552 @@
+<style>
+
+body{background-color: #F4ECD6}
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: #008989;
+    text-align: center;
+}
+ul {
+    top:3px;
+    text-align:center;
+    margin-right:1%;
+    margin-left:-30px;
+    list-style:none;
+    float:left;
+}
+
+ul a{
+display:block;
+background-color: #FC4B63;
+color:white;
+width:150px;
+height: 30px;
+border: 2px solid white;
+padding: 1px;
+border-radius: 10px;
+text-decoration:none;
+}
+ul a:hover {
+background-color:#FFE2D1;
+color: #3C4148;
+border: none;
+
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+div.box 
+{
+    background-color: #e7f3fe;
+    width: 700px;
+    border: 2px solid gray;
+    padding: 10px;
+    margin: 10px;
+} 
+
+table{width: 100%;}
+table, th, td {
+    text-align: center;
+   border: 1px solid gray;
+    border-collapse: collapse;
+}
+
+m{ color:bule; }
+.centerTable { margin: 0px auto;
+background-color: white; }
+.titles{background-color: lightgray;}
+span{
+    vertical-align:super;
+    font-size: 13px;
+}
+.List {text-align:left;}
+iframe {
+    display: block;
+    margin: auto;
+}
+.notes{width: 800px;
+margin: 10px;
+padding: 4px 12px; 
+background-color: #ffffcc;
+border-left: 6px solid #ffeb3b;}
+
+
+.answers li { 
+list-style: upper-alpha; 
+} 
+
+label { 
+margin-left: 0.5em; 
+cursor: pointer; 
+} 
+
+#results { 
+background: #dddada; 
+color: 000000; 
+padding: 3px; 
+text-align: center; 
+width: 200px; 
+cursor: pointer; 
+border: 1px solid gray; 
+}
+
+#results:hover { 
+background: #3d91b8; 
+color: #ffffff; 
+padding: 3px; 
+text-align: center; 
+width: 200px; 
+cursor: pointer; 
+border: 1px solid gray; 
+} 
+
+#categorylist { 
+margin-top: 6px; 
+display: none; 
+} 
+
+#category1, #category2, #category3, #category4, #category5, #category6, #category7, #category8, #category9, #category10, #category11 { 
+display: none; 
+}
+
+#closing {
+display: none;
+font-style: italic;
+}
+
+div.boxE 
+{
+    background-color: #e7f3fe;
+    width: 800px;
+    border: 2px solid gray;
+    padding: 10px;
+    margin: 10px;
+}   
+  
+div.box1 
+{
+    background-color: rgba(255, 226, 209, 0.5);
+    width: 800px;
+    border: 2px solid gray;
+    padding: 10px;
+    margin: 10px;
+} 
+
+div.box2 
+{
+    background-color: rgba(255, 226, 209, 0.5);
+    width: 800px;
+    border: 2px solid rgba(128, 128, 128, 0.6);
+    padding: 10px;
+    margin: 10px;
+}
+
+div.graphs{ 
+    width: 800px;
+    padding: 10px;
+    margin: 10px;}
+    
+div.Activity{ border: 2px dashed #008989;
+width: 815px;
+  padding: 10px;
+    margin: 10px;}
+div.box3
+{
+  width: 780px;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: rgba(223, 248, 235, 0.5);
+  border-left: 6px solid #008989;
+}
+
+#prev{ 
+background-color: #FC4B63;
+color: white;
+position: absolute;
+left:26%;
+padding-right:10px;
+padding-bottom:5px;
+padding-left:10px;
+cursor: pointer;
+border-top: 1.75px solid #CCCCCC;
+border-right: 1.5px solid gray;
+border-bottom: 1.5px solid gray;
+border-left: 1.75px solid #CCCCCC;
+}
+
+#next {
+  background-color: #FC4B63;
+  color: white;
+position: absolute;
+right: 12%;
+padding-right:10px;
+padding-bottom:5px;
+padding-left:10px;
+cursor: pointer;
+border-top: 1.5px solid #CCCCCC;
+border-right: 1.5px solid gray;
+border-bottom: 1.5px solid gray;
+border-left: 1.5px solid #CCCCCC;}
+
+
+#frameblock{display: block;
+widows: 100%;
+height: 100%;}
+
+#frame4,#frame5,#frame6,#frame7{display: inline-block;
+box-sizing: border-box;}
+
+#frame3{box-sizing: border-box;}
+
+
+[data-tooltip] {
+    position: relative;
+    display: inline-block;
+    background-color: #6FB2CF;
+    border: 1px solid lightgray;
+    color:white;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+    cursor: help;
+}
+/* Tooltip styling */
+[data-tooltip]:before {
+    content: attr(data-tooltip);
+    display: none;
+    position: absolute;
+    background: #000;
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 14px;
+    line-height: 1.4;
+    min-width: 100px;
+    text-align: center;
+    border-radius: 4px;
+}
+/* Dynamic horizontal centering */
+[data-tooltip-position="top"]:before {
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+/* Dynamic vertical centering */
+
+[data-tooltip-position="top"]:before {
+    bottom: 100%;
+    margin-bottom: 6px;
+}
+/* Tooltip arrow styling/placement */
+[data-tooltip]:after {
+    content: '';
+    display: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+/* Dynamic horizontal centering for the tooltip */
+[data-tooltip-position="top"]:after {
+    left: 50%;
+    margin-left: -6px;
+}
+/* Dynamic vertical centering for the tooltip */
+
+[data-tooltip-position="top"]:after {
+    bottom: 100%;
+    border-width: 6px 6px 0;
+    border-top-color: #000;
+}
+/* Show the tooltip when hovering */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+    display: block;
+    z-index: 50;
+}
+.BB{
+  position: relative;
+  max-width: 1000px;
+  height: auto;
+  margin: 20px auto;
+  border: 2px solid rgba(252, 75, 99,.50);
+  border-radius: 15px;
+padding: 10px;
+  padding-bottom: 70px;
+  padding-left:  70px;  box-shadow: 8px 8px 5px gray;
+  box-sizing: border-box;
+
+}
+
+.firstbox {
+  position: relative;
+  max-width: 1000px;
+  height: auto;
+  border: 2px solid rgba(252, 75, 99,.50);
+  margin: 20px auto;
+  padding: 10px;
+  padding-bottom: 70px;
+  padding-left:  70px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  box-shadow: 8px 8px 5px gray;
+    content: "click here ";
+
+
+}
+.thirdbox {
+  position: relative;
+  max-width: 1000px;
+  height: auto;
+  border: 2px solid rgba(252, 75, 99,.50);
+  margin: 20px auto;
+padding: 10px;
+  padding-bottom: 70px;
+  padding-left:  70px;  box-sizing: border-box;
+  border-radius: 15px;
+    box-shadow: 8px 8px 5px gray;
+}
+
+.firstbox:after{
+
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-top: 0px solid rgba(252, 75, 99,.50);
+  border-bottom: 2px solid rgba(252, 75, 99,.50);
+  border-left:0px solid rgba(252, 75, 99,.50);
+  border-right: 2px solid rgba(252, 75, 99,.50);
+  top:100%;
+  left: 50%;
+  content: "";
+  margin-left: -25px;
+  transform: rotate(45deg);
+  margin-top: -25px;
+  background: white;
+  cursor: pointer;
+  box-shadow: 8px 8px 5px gray;
+}
+
+/*.   */
+[data-tooltip2] {
+    position: relative;
+    display: inline-block;
+    background-color: #6FB2CF;
+    border: 1px solid lightgray;
+    color:white;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+    cursor: pointer;
+}
+/* Tooltip styling */
+[data-tooltip2]:before {
+    content: attr(data-tooltip2);
+    display: none;
+    position: absolute;
+    background: url(/Users/mariam/Documents/implementation/interactive/Final/img/rsz_table2.png);
+    color: #fff;
+    padding: 4px 8px;
+    line-height: 1.4;
+    min-width: 840px;
+    height: 375px;
+    text-align: center;
+    border-radius: 4px;
+}
+/* Dynamic horizontal centering */
+[data-tooltip-position2="top"]:before {
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+/* Dynamic vertical centering */
+
+[data-tooltip-position2="top"]:before {
+    bottom: 100%;
+    margin-bottom: 6px;
+}
+/* Tooltip arrow styling/placement */
+[data-tooltip2]:after {
+    content: '';
+    display: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+/* Dynamic horizontal centering for the tooltip */
+[data-tooltip-position2="top"]:after {
+    left: 50%;
+    margin-left: -6px;
+}
+/* Dynamic vertical centering for the tooltip */
+
+[data-tooltip-position2="top"]:after {
+    bottom: 100%;
+    border-width: 6px 6px 0;
+    border-top-color: #000;
+}
+/* Show the tooltip when hovering */
+[data-tooltip2]:hover:before,
+[data-tooltip2]:hover:after {
+    display: block;
+    z-index: 100;
+}
+
+/*.       */
+[data-tooltip3] {
+    position: relative;
+    display: inline-block;
+    background-color: #6FB2CF;
+    border: 1px solid lightgray;
+    color:white;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+    cursor: pointer;
+}
+/* Tooltip styling */
+[data-tooltip3]:before {
+    content: attr(data-tooltip3);
+    display: none;
+    position: absolute;
+    background: url(/Users/mariam/Documents/implementation/interactive/Final/img/Picture1.png);
+    color: #fff;
+    padding: 4px 8px;
+    line-height: 1.4;
+    min-width: 428px;
+    height: 377px;
+    text-align: center;
+    border-radius: 4px;
+}
+/* Dynamic horizontal centering */
+[data-tooltip-position3="top"]:before {
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+/* Dynamic vertical centering */
+
+[data-tooltip-position3="top"]:before {
+    bottom: 100%;
+    margin-bottom: 6px;
+}
+/* Tooltip arrow styling/placement */
+[data-tooltip3]:after {
+    content: '';
+    display: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+/* Dynamic horizontal centering for the tooltip */
+[data-tooltip-position3="top"]:after {
+    left: 50%;
+    margin-left: -6px;
+}
+/* Dynamic vertical centering for the tooltip */
+
+[data-tooltip-position3="top"]:after {
+    bottom: 100%;
+    border-width: 6px 6px 0;
+    border-top-color: #000;
+}
+/* Show the tooltip when hovering */
+[data-tooltip3]:hover:before,
+[data-tooltip3]:hover:after {
+    display: block;
+    z-index: 100;
+}
+
+/* ---------------------------------------------------------- */
+[data-tooltip4] {
+    position: relative;
+    display: inline-block;
+    background-color: #6FB2CF;
+    border: 1px solid lightgray;
+    color:white;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+    cursor: pointer;
+}
+/* Tooltip styling */
+[data-tooltip4]:before {
+    content: attr(data-tooltip4);
+    display: none;
+    position: absolute;
+    background: url(/Users/mariam/Documents/implementation/interactive/Final/img/Picture2.png);
+    color: #fff;
+    padding: 4px 8px;
+    line-height: 1.4;
+    min-width: 425px;
+    height: 377px;
+    text-align: center;
+    border-radius: 4px;
+}
+/* Dynamic horizontal centering */
+[data-tooltip-position4="top"]:before {
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+/* Dynamic vertical centering */
+
+[data-tooltip-position4="top"]:before {
+    bottom: 100%;
+    margin-bottom: 6px;
+}
+/* Tooltip arrow styling/placement */
+[data-tooltip4]:after {
+    content: '';
+    display: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+/* Dynamic horizontal centering for the tooltip */
+[data-tooltip-position4="top"]:after {
+    left: 50%;
+    margin-left: -6px;
+}
+/* Dynamic vertical centering for the tooltip */
+
+[data-tooltip-position4="top"]:after {
+    bottom: 100%;
+    border-width: 6px 6px 0;
+    border-top-color: #000;
+}
+/* Show the tooltip when hovering */
+[data-tooltip4]:hover:before,
+[data-tooltip4]:hover:after {
+    display: block;
+    z-index: 100;
+}
+</style>

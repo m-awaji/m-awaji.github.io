@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.rawgit.com/konvajs/konva/1.6.5/konva.min.js"></script>
+  <meta charset="utf-8">
+  <title>Example6-Interpretation</title>
+  <style>
+
+   <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #F0F0F0;
+        }
+        #selector { height: 300px; width: 510px; position: relative; margin: 0   auto;}
+        #container { height: 280px; width: 450px; border: dashed black 1px; position: relative;  margin: 0   auto;  top: 0px; background-color: white;}
+        </style>
+</head>
+<body>
+
+<div id="selector"> 
+  <p id="inst" style="color: blue;">
+  Click on each element below to see the concept names the element belongs to and the role names that relate it to other elements. </p>
+  <div id="container"></div>
+  <p style="text-align: center;">A graphical representation of the interpretation <i>I</i><sub>1</sub> in example 6</p>
+  </div>
+</div>
+
+  <script>
+
+    var stageX = new Konva.Stage({
+        container: 'container',
+        width: 500,
+        height: 300
+    });
+    var layer = new Konva.Layer();
+
+//Element_1
+var PaulGroup = new Konva.Group({
+        x: 30,
+        y: 30,
+        draggable: true,
+        visible: true
+
+        
+    });
+    var PaulText = new Konva.Text({
+        fontSize: 12,
+        fontFamily: 'Calibri',
+        text: 'Paul',
+        fill: 'black',
+        padding: -9 -2
+    });
+    var PaulC = new Konva.Circle({
+        radius: 20,
+        fill: 'pink',
+        stroke: 'gray',
+        strokeWidth: 1
+    });
+
+    //Element_2
+    var Pro1Group = new Konva.Group({
+        x: 160,
+        y: 30,
+        draggable: true,
+        visible: false
+
+    }); 
+    var Pro1Text = new Konva.Text({
+        fontSize: 12,
+        fontFamily: 'Calibri',
+        text: 'Pro1',
+        fill: 'black',
+        padding: -9 -2
+    });
+   
+    var Pro1C = new Konva.Circle({
+        radius:20,
+        fill: 'pink',
+        stroke: 'gray',
+        strokeWidth: 1
+    }); 
+     //Element_3
+    var Tech1Group = new Konva.Group({
+        x: 120,
+        y: 180,
+        draggable: true,
+        visible: false
+
+        
+    });
+    var Tech1Text = new Konva.Text({
+        fontSize: 10,
+        fontFamily: 'Calibri',
+        text: 'Tech1',
+        fill: 'black',
+        padding: -9 -2
+    });
+    var Tech1C = new Konva.Circle({
+        radius: 20,
+        fill: 'pink',
+        stroke: 'gray',
+        strokeWidth: 1
+    });
+    //Element_4
+    var SaraGroup = new Konva.Group({
+        x: 340,
+        y: 40,
+        draggable: true,
+        visible: true
+
+    }); 
+    var SaraText = new Konva.Text({
+        fontSize: 12,
+        fontFamily: 'Calibri',
+        text: 'Sara',
+        fill: 'black',
+        padding: -9 -2
+    });
+    var SaraC = new Konva.Circle({
+        radius:20,
+        fill: 'pink',
+        stroke: 'gray',
+        strokeWidth: 1
+    });
+    //Element_5
+    var R1Group = new Konva.Group({
+        x: 390,
+        y: 220,
+        draggable: true,
+        visible: false
+
+    }); 
+    var R1Text = new Konva.Text({
+        fontSize: 12,
+        fontFamily: 'Calibri',
+        text: 'R1',
+        fill: 'black',
+        padding: -9 -2
+    });
+    var R1C = new Konva.Circle({
+        radius:20,
+        fill: 'pink',
+        stroke: 'gray',
+        strokeWidth: 1
+    });
+    //Element_6
+    var AndyGroup = new Konva.Group({
+        x: 320,
+        y: 220,
+        draggable: true,
+        visible: true
+
+    }); 
+    var AndyText = new Konva.Text({
+        fontSize: 12,
+        fontFamily: 'Calibri',
+        text: 'Andy',
+        fill: 'black',
+        padding: -9 -2
+    });
+    var AndyC = new Konva.Circle({
+        radius:20,
+        fill: 'pink',
+        stroke: 'gray',
+        strokeWidth: 1
+    });
+    //Element_7
+    var Cs1Group = new Konva.Group({
+        x: 170,
+        y: 130,
+        draggable: true,
+        visible: false
+
+    }); 
+    var Cs1Text = new Konva.Text({
+        fontSize: 12,
+        fontFamily: 'Calibri',
+        text: 'Cs1',
+        fill: 'black',
+        padding: -9 -2,
+    });
+    var Cs1C = new Konva.Circle({
+        radius:20,
+        fill: 'pink',
+        stroke: 'gray',
+        strokeWidth: 1
+    });
+//Liza_2
+    var ArrPaulGroup = new Konva.Group({
+        draggable: true,
+        visible: false
+
+       });
+
+    var ArrPaulText =new Konva.Text({
+        x: 75,
+        y: 70,
+        fontSize: 14,
+        fontFamily: 'Calibri',
+        text: 'teaches',
+        fill: '#00CC99',
+    });
+
+    var ArrPaul = new Konva.Arrow({
+      points: [PaulGroup.getX()+13, PaulGroup.getY()+15, Tech1Group.getX()-15, Tech1Group.getY()-15],
+      pointerLength: 5,
+      pointerWidth: 5,
+      fill: 'black',
+      stroke: 'black',
+      padding: 10,
+      strokeWidth: 1
+    });
+    //Andy_3
+    var ArrAndyGroup = new Konva.Group({
+        draggable: true,
+        visible: false
+
+       });
+    var ArrAndyText =new Konva.Text({
+        x: 230,
+        y: 145,
+        fontSize: 14,
+        fontFamily: 'Calibri',
+        text: 'teaches',
+        fill: '#00CC99',
+    });
+    var ArrAndy = new Konva.Arrow({
+      points: [AndyGroup.getX()-20, AndyGroup.getY(), Cs1Group.getX()+19, Cs1Group.getY()+10],
+      pointerLength: 5,
+      pointerWidth: 5,
+      fill: 'black',
+      stroke: 'black',
+      strokeWidth: 1
+    });
+    //Arrow_4
+    var ArrR1Group = new Konva.Group({
+        draggable: true,
+        visible: false
+
+       });
+
+    var ArrR1Text =new Konva.Text({
+        x: 375,
+        y: 100,
+        fontSize: 14,
+        fontFamily: 'Calibri',
+        text: 'teaches',
+        fill: '#00CC99',
+    });
+    var ArrR1 = new Konva.Arrow({
+      points: [SaraGroup.getX(), SaraGroup.getY()+20, R1Group.getX(), R1Group.getY()-20],
+      pointerLength: 5,
+      pointerWidth: 5,
+      fill: 'black',
+      stroke: 'black',
+      padding: 10,
+      strokeWidth: 1
+    });
+//Arrow_6
+    var ArrCs1Group = new Konva.Group({
+        draggable: false,
+        visible: false
+
+       });
+
+    var arrCs1Text =new Konva.Text({
+        x: 230,
+        y: 90,
+        fontSize: 14,
+        fontFamily: 'Calibri',
+        text: 'teaches',
+        fill: '#00CC99',
+    });
+    var ArrCs1 = new Konva.Arrow({
+      points: [SaraGroup.getX()-14, SaraGroup.getY()+14, Cs1Group.getX()+20, Cs1Group.getY()+5],
+      pointerLength: 5,
+      pointerWidth: 5,
+      fill: 'black',
+      stroke: 'black',
+      padding: 10,
+      strokeWidth: 1
+    });
+    //Arrow_5
+    var ArrPro1Group = new Konva.Group({
+        draggable: true,
+        visible: false
+
+       });
+
+    var ArrPro1Text =new Konva.Text({
+        x: 225,
+        y: 15,
+        fontSize: 14,
+        fontFamily: 'Calibri',
+        text: 'publishes',
+        fill: '#00CC99',
+    });
+    var ArrPro1 = new Konva.Arrow({
+      points: [SaraGroup.getX()-20, SaraGroup.getY(), Pro1Group.getX()+20, Pro1Group.getY()],
+      pointerLength: 5,
+      pointerWidth: 5,
+      fill: 'black',
+      stroke: 'black',
+      padding: 10,
+      strokeWidth: 1
+    });
+    // concepts
+var PaulCo = new Konva.Text({
+    visible: false,
+       x:12,
+        y:55, 
+        fontSize: 14,
+        fontFamily: 'Calibri',
+        text: 'Professor \n ',
+        fill: 'blue',     
+    });
+
+var Pro1Co = new Konva.Text({
+    visible: true,
+       x:-20,
+        y:25, 
+        fontSize: 14,
+        fontFamily: 'Calibri',
+        text: 'Course\nResearch',
+        fill: 'blue',
+    });
+
+    var Tech1Co = new Konva.Text({
+       x:-15,
+        y:25, 
+        fontSize: 14,
+        fontFamily: 'Calibri',
+        text: 'Course',
+        fill: 'blue',
+    });
+
+    var SaraCo = new Konva.Text({
+        visible: false,
+        x:320,
+        y:65, 
+        fontSize: 14,
+        fontFamily: 'Calibri',
+        text: 'Professor \nResearcher',
+        fill: 'blue',
+    });
+
+var R1Co = new Konva.Text({
+       x:-20,
+        y:25, 
+        fontSize: 14,
+        fontFamily: 'Calibri',
+        text: 'Course\nPGC',
+        fill: 'blue',
+
+    });
+    var AndyCo = new Konva.Text({
+        visible: false,
+       x:295,
+        y:245, 
+        fontSize: 14,
+        fontFamily: 'Calibri',
+        text: 'Professor',
+        fill: 'blue',
+    });
+
+ var Cs1Co = new Konva.Text({
+       x:-20,
+        y:25, 
+        fontSize: 14,
+        fontFamily: 'Calibri',
+        text: 'Course',
+        fill: 'blue',
+    });
+
+    PaulGroup.add(PaulC).add(PaulText);
+    SaraGroup.add(SaraC).add(SaraText);
+    AndyGroup.add(AndyC).add(AndyText);
+
+    Tech1Group.add(Tech1C).add(Tech1Text).add(Tech1Co);
+    Pro1Group.add(Pro1C).add(Pro1Text).add(Pro1Co);
+    Cs1Group.add(Cs1C).add(Cs1Text).add(Cs1Co);
+    R1Group.add(R1C).add(R1Co).add(R1Text);
+
+    ArrPaulGroup.add(ArrPaulText).add(ArrPaul);
+    ArrAndyGroup.add(ArrAndy).add(ArrAndyText);
+    ArrR1Group.add(ArrR1Text).add(ArrR1);
+    ArrPro1Group.add(ArrPro1Text).add(ArrPro1);
+    ArrCs1Group.add(ArrCs1).add(arrCs1Text);
+
+layer.add(PaulGroup);
+layer.add(SaraGroup);
+layer.add(AndyGroup);
+
+
+layer.add(Tech1Group);
+layer.add(Cs1Group);
+layer.add(R1Group);
+layer.add(Pro1Group);
+
+layer.add(ArrPaulGroup);
+layer.add(ArrAndyGroup);
+layer.add(ArrR1Group);
+layer.add(ArrPro1Group);
+layer.add(ArrCs1Group);
+
+layer.add(PaulCo);
+layer.add(AndyCo);
+layer.add(SaraCo);
+
+    //rotate
+    ArrPaulText.rotation(65);
+    ArrAndyText.rotation(35);
+    ArrR1Text.rotation(70);
+    ArrPro1Text.rotation(5);
+    arrCs1Text.rotation(-30);
+
+
+// clicks
+PaulGroup.on('mouseover mouseenter mouseup', function()
+    {   
+        stageX.container().style.cursor = 'pointer';
+        Tech1Group.show();
+        (PaulCo).show();
+        ArrPaulGroup.show();
+                 });
+    PaulGroup.on('mouseleave mouseout', function()
+    {   
+        stageX.container().style.cursor = 'default';    
+                 });
+AndyGroup.on('mouseover mousedown mouseup',function()
+    {
+        stageX.container().style.cursor = 'pointer';
+        Cs1Group.show();
+        AndyCo.show();
+        ArrAndyGroup.show();
+   });
+AndyGroup.on('mouseleave mouseout', function()
+    {   
+        stageX.container().style.cursor = 'default';    
+                 });
+
+SaraGroup.on('mouseover mousedown mouseup',function()
+    {
+        stageX.container().style.cursor = 'pointer';
+        SaraCo.show();
+        ArrR1Group.show();
+        Cs1Group.show();
+        ArrCs1Group.show();
+        R1Group.show();
+        Pro1Group.show();
+        ArrPro1Group.show();
+
+   });
+SaraGroup.on('mouseleave mouseout', function()
+    {   
+        stageX.container().style.cursor = 'default';    
+                 });
+
+// add the layer to the stage
+    stageX.add(layer);
+    //fire clicks
+
+
+    </script>
+</body>
+</html>

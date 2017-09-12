@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <script type="text/javascript" src="/Users/mariam/Documents/implementation/interactive/jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="/Users/mariam/Documents/implementation/interactive/jquery-ui.js"></script>
+  <style type="text/css">
+
+#main {width: 175px; height: 270px;position: relative; margin: 0 auto; }
+
+#ex3{width: 175px; height: 270px; border: 1px dashed #000; position: absolute; margin: 0 auto; top:40px; bottom: 1px; }
+
+
+ #draggable-15, #draggable-16,#draggable-17, #draggable-18, #draggable-19, #draggable-20, #draggable-21 {width: 30px; height: 30px; -webkit-border-radius: 999px; -moz-border-radius: 999px; border-radius: 999px; position: absolute; z-index: 10; top: 0;  border: 1px; border-color: gray; margin: 10px; cursor: pointer; border:1px solid gray;}
+
+#draggable-15{ left: 0px; background-color: lightblue;}
+#draggable-16{ left: 40px;background-color: lightblue;}
+#draggable-17{ left: 80px;background-color: lightblue; }
+#draggable-20{ left: 120px; background-color: lightblue; }
+#draggable-19{ left: 10px; top: 40px;background-color: lightblue; }
+#draggable-18{ left: 50px; top: 40px;background-color: lightblue;}
+#draggable-21{ left: 90px; top: 40px;background-color: lightblue; }
+
+ .droparea-3{height: 130px; width: 130px; position: absolute; border-radius: 70px; border: 2px dashed gray;left:20px; bottom:40px;}
+
+.desc {height: 20px; width: 150px; position: absolute; top:230px;  left: 10px; text-align: center;}
+
+.dtxt{padding: 20px; text-align: center;}
+
+
+.txt >p { 
+ display: flex;
+ height: 10%;
+  font-size: 13px;
+justify-content: center;
+ align-items: center;
+}
+#app_status {color: blue; text-align: center; }
+#app_status3{ text-align:center; position: relative; 
+    z-index: 99999999;
+}
+#app_status2{background-color: #ffffcc;display: inline;}
+
+  </style>
+
+  <title></title>
+<script type='text/javascript'>
+  var count1=0;
+function _(id){
+   return document.getElementById(id);  
+}
+$(window).load(function(){
+
+
+// Excercise1
+$(".draggable-15,.draggable-16,.draggable-17,.draggable-18,.draggable-19,.draggable-20,.draggable-21").draggable({ revert: true, containment: "#ex3" });
+
+ $("#droppable-3").droppable({
+  activeClass: 'ui-state-hover',
+  hoverClass: 'ui-state-active',
+  drop: function(event, ui) {
+
+   if (ui.draggable.is('.c3s')){
+        count1=count1+1;
+    console.log(count1);
+        document.getElementById("app_status").innerHTML ="<span style='color:blue'> &#9989; Sara has a teaches-filler, R1, that is a PGC.</span>";
+        $(this).addClass('ui-state-highlight').find('p').html('');
+      ui.draggable.css("background", "blue").css("color","white");
+      ui.draggable.clone(true).css('position', 'inherit').appendTo('#ex3');
+      ui.draggable.remove();
+      if(count1==1)
+      {  document.getElementById("app_status").innerHTML ="";
+        document.getElementById("app_status2").innerHTML="<span style='color:green'>Done! You Got The Right Element.<br><br><br><br></span>";
+        }
+    }
+if (ui.draggable.is('.c3p')){
+    console.log(count1);
+        document.getElementById("app_status").innerHTML ="<span style='color:black'> &#10060; Paul doesn't has a teaches-filler of a PGC.</span>";
+        $(this).addClass('ui-state-highlight').find('p').html('');
+      ui.draggable.css("background", "gray").css("color","white");
+      if(count1==1)
+      {  document.getElementById("app_status").innerHTML ="";
+        document.getElementById("app_status2").innerHTML="<span style='color:green'>Done! You Got All Right Elements.<br><br><br><br></span>";
+        }
+    }
+    if (ui.draggable.is('.c3a')){
+    console.log(count1);
+        document.getElementById("app_status").innerHTML ="<span style='color:black'>&#10060; Andy doesn't have a teaches-filler of a PGC.</span>";
+         $(this).addClass('ui-state-highlight').find('p').html('');
+      ui.draggable.css("background", "gray").css("color","white");
+      if(count1==3)
+      {  document.getElementById("app_status").innerHTML ="";
+        document.getElementById("app_status2").innerHTML="<span style='color:green'>Done! You Got All Right Elements.<br><br><br><br></span>";
+        }
+    }
+
+
+if (ui.draggable.is('.c3n')) {
+  if(count1==1)
+      {  document.getElementById("app_status").innerHTML ="";
+        document.getElementById("app_status2").innerHTML="<span style='color:green'>Done! You Got All Right Elements.<br><br><br><br></span>";
+      }
+    console.log(count1);
+    document.getElementById("app_status").innerHTML ="<span style='color:black'>  &#10060; This element doesn't have a teaches-filler.</span>";
+     $(this).addClass('ui-state-highlight').find('p').html('');
+      ui.draggable.css("background", "gray").css("color","white");
+}
+    }
+ });
+});
+
+</script>
+</head>
+<body>
+<div id="main">
+<h5 id="app_status"></h5>
+<div id="app_status3" class="app_status2" ><span id="app_status2"></span></div>
+      <div id="content" class="cont">
+      <div id="ex3">
+        <div id="draggable-15" class="draggable-15 ui-widget-content c3n txt" ><p>R1</p></div>
+        <div id="draggable-16" class="draggable-16 ui-widget-content c3s txt"><p>Sara</p></div>
+        <div id="draggable-17" class="draggable-17 ui-widget-content c3p txt"><p>Paul</p></div>
+        <div id="draggable-18" class="draggable-18 ui-widget-content c3a txt"><p>Andy</p></div>
+        <div id="draggable-19" class="draggable-19 ui-widget-content c3n txt"><p>Cs1</p></div>
+        <div id="draggable-20" class="draggable-20 ui-widget-content c3n txt"><p>Pro1</p></div>
+        <div id="draggable-21" class="draggable-21 ui-widget-content c3n txt"><p>Tech1</p></div>
+
+        <div id="droppable-3" class="droparea-3 ui-widget-header center-text"><p class="dtxt">drop here</p></div>
+          <div class="desc">∃teaches.PGC</div>
+
+      </div>
+</div>
+</div>
+</body>
+</html>

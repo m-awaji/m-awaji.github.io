@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <script type="text/javascript" src="/Users/mariam/Documents/implementation/interactive/jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="/Users/mariam/Documents/implementation/interactive/jquery-ui.js"></script>
+  <style type="text/css">
+
+#main {width: 175px; height: 270px; position: relative; margin: 0 auto; }
+
+#ex1{width: 175px; height: 270px; border: 1px dashed #000; position: absolute; margin: 0 auto; top:40px; bottom: 1px; }
+
+#draggable-1, #draggable-2, #draggable-3, #draggable-4, #draggable-5, #draggable-6, #draggable-7{width: 30px; height: 30px; -webkit-border-radius: 999px; -moz-border-radius: 999px; border-radius: 999px; position: absolute; z-index: 10; top: 0;  border: 1px; border-color: gray; margin: 10px; cursor: pointer; border:1px solid gray;}
+
+#draggable-1{ left: 0px;  background-color: lightblue;}
+#draggable-2{ left: 40px;background-color: lightblue;}
+#draggable-3{ left: 80px; background-color: lightblue;}
+#draggable-6{ left: 120px; background-color: lightblue; }
+#draggable-5{ left: 10px; top: 40px; background-color: lightblue; }
+#draggable-4{ left: 50px; top: 40px;background-color: lightblue;}
+#draggable-7{ left: 90px; top: 40px; background-color: lightblue;}
+
+
+.droparea-1{height: 130px; width: 130px; position: absolute; border-radius: 70px; border: 2px dashed gray;left:20px; bottom:40px;}
+
+.desc {height: 20px; width: 150px; position: absolute; top:230px;  left: 10px; text-align: center;}
+
+.dtxt{padding: 20px; text-align: center;}
+
+.txt >p { 
+ display: flex;
+ height: 10%;
+ font-size: 13px;
+justify-content: center;
+ align-items: center;
+}
+#app_status {color: blue; text-align: center; }
+#app_status3{ text-align:center; position: relative; 
+    z-index: 99999999;
+}
+#app_status2{background-color: #ffffcc;display: inline;}
+  </style>
+
+  <title></title>
+<script type='text/javascript'>
+    var count1=0;
+function _(id){
+   return document.getElementById(id);  
+}
+$(window).load(function(){
+
+// Excercise1
+$(".draggable-1,.draggable-2,.draggable-3,.draggable-4,.draggable-5,.draggable-6,.draggable-7").draggable({ revert: true, containment: "#ex1" });
+
+ $("#droppable-1").droppable({
+  activeClass: 'ui-state-hover',
+  hoverClass: 'ui-state-active',
+  drop: function(event, ui) {
+
+   if (ui.draggable.is('.cl')) {
+
+    document.getElementById("app_status").innerHTML ="<span style='color:black'> &#10060; R1 is not a professor!</span>";
+    $(this).addClass('ui-state-highlight').find('p').html('');
+        ui.draggable.css("background", "gray").css("color","white");
+          }
+   if (ui.draggable.is('.cs')) {
+    document.getElementById("app_status").innerHTML ="<span style='color:black'>&#10060; Sara is a researcher!</span>";
+    $(this).addClass('ui-state-highlight').find('p').html('');
+    ui.draggable.css("background", "gray").css("color","white");
+  }
+    if (ui.draggable.is('.cc')){
+      document.getElementById("app_status").innerHTML ="<span style='color:black'> &#10060; Cs1 is not a professor!</span";
+      $(this).addClass('ui-state-highlight').find('p').html('');
+      ui.draggable.css("background", "gray").css("color","white");
+   } 
+ if (ui.draggable.is('.cp')){
+   document.getElementById("app_status").innerHTML ="<span style='color:black'>&#10060; Pro1 is not a professor!</span>";
+      $(this).addClass('ui-state-highlight').find('p').html('');
+      ui.draggable.css("background", "gray").css("color","white");
+   } 
+   if (ui.draggable.is('.cf')){
+    document.getElementById("app_status").innerHTML ="<span style='color:black'>&#10060; Tech1 is not a professor!</span>";
+      $(this).addClass('ui-state-highlight').find('p').html('');
+      ui.draggable.css("background", "gray").css("color","white");
+
+   } 
+   if (ui.draggable.is('.c1p')){
+                count1=count1+1;
+                console.log(count1);
+                
+      document.getElementById("app_status").innerHTML ="<span style='black'>&#9989; Paul is a Professor and not a researcher.</span>";
+      
+      $(this).addClass('ui-state-highlight').find('p').html('');
+      ui.draggable.css("background", "blue").css("color","white");
+      ui.draggable.clone(true).css('position', 'inherit').appendTo('#ex1');
+      ui.draggable.remove();  
+      if (count1==2)
+        {
+      document.getElementById("app_status").innerHTML="";
+      document.getElementById("app_status2").innerHTML="<span style='color:green'>Done! You Got All Right Elements. </span>"
+                    }    
+    }
+
+    if (ui.draggable.is('.c1a')){
+                count1=count1+1;
+                console.log(count1);
+                
+      document.getElementById("app_status").innerHTML ="<span style='black'>&#9989; Andy is a Professor and not a researcher.</span>";
+      
+      $(this).addClass('ui-state-highlight').find('p').html('');
+      ui.draggable.css("background", "blue").css("color","white");
+      ui.draggable.clone(true).css('position', 'inherit').appendTo('#ex1');
+      ui.draggable.remove();  
+      if (count1==2)
+        {
+      document.getElementById("app_status").innerHTML="";
+      document.getElementById("app_status2").innerHTML="<span style='color:green'>Done! You Got All Right Elements. </span>"
+                    }    
+    }
+        
+    }
+ });
+
+});
+
+
+</script>
+</head>
+<body>
+
+<div id="main">
+<h5 id="app_status"></h5>
+<div id="app_status3" class="app_status2" ><span id="app_status2"></span></div>
+      <div id="content" class="cont">
+      <div id="ex1">
+        <div id="draggable-1" class="draggable-1 ui-widget-content  cl txt"><p>R1</p></div>
+        <div id="draggable-2" class="draggable-2 ui-widget-content   cs txt"><p>Sara</p></div>
+        <div id="draggable-3" class="draggable-3 ui-widget-content c1p txt"><p>Paul</p></div>
+        <div id="draggable-4" class="draggable-4 ui-widget-content c1a txt"><p>Andy</p><h6></div>
+        <div id="draggable-5" class="draggable-5 ui-widget-content  cc txt"><p>Cs1</p></div>
+        <div id="draggable-6" class="draggable-6 ui-widget-content cp txt"><p>Pro1</p></div>
+        <div id="draggable-7" class="draggable-7 ui-widget-content cf txt"><p>Tech1</p></div>
+        <div id="droppable-1" class="droparea-1 ui-widget-header center-text"><p class="dtxt">drop here</p> <h5 class="sta"></h5>
+      </div>
+      <div class="desc">Professor ⊓ ¬Researcher</div>
+      </div>
+</div> 
+</div>
+</body>
+</html>
