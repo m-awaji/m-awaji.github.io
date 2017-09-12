@@ -3,7 +3,6 @@
 <head>
 <title>An Introduction to Description Logic</title>
 <link href="/Users/mariam/Desktop/implementation/style.css"" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="/Users/mariam/Desktop/implementation/nav.jquery.min.js"></script>
   <style type="text/css">
 
   a{
@@ -42,7 +41,7 @@
    <li> <a href="/Users/mariam/Desktop/implementation/index.html">Welcome!</a> </li>
     <li> <a href="/Users/mariam/Desktop/implementation/Introduction.html">Introduction</a> </li>
      <li> <a href="/Users/mariam/Desktop/implementation/DL_Notation.html">DL Notation</a></li>
-     <li> <a href="/Users/mariam/Desktop/implementation/section3.html">References</a></li>
+     <li> <a href="/Users/mariam/Desktop/implementation/Ref.html">References</a></li>
     </ul>
    </nav>
 
@@ -70,7 +69,7 @@ The interpretation is a structure that:</p>
 <p>&bull; fixes for each role name, which pairs of elements are related to each other by this role [1].</p> 
 </div><br>
 <div class="box3">
-<strong>Definition 1:</strong> An interpretation <i>I</i>= (&#916;, .<span>I</span> ) consists of 
+<strong>Definition 1:</strong> An interpretation <i>I</i> = (&#916;, .<span>I</span> ) consists of 
   a non-empty set of individuals &#916;<span>I</span>,  called the interpretation domain, and 
 .<span>I</span>  that is an interpretation function that maps:
 
@@ -89,19 +88,19 @@ The interpretation is a structure that:</p>
 <div class="boxE">
 <p><strong>Example 5:</strong>
 The following is an example of an interpretation <i>I</i> for our university domain.</p>
-<p>&#916;<span>I</span> = {Paul, Andy, Cs1, Sara, Tech1, R1, Pro1},</p>
-<p>Professor<span>I</span> = {Paul, Sara, Andy, Pro1},</p>
-<p>Course<span>I</span> = {Cs1, Tech1, Pro1},</p>
-<p>Research<span>I</span> = {R1},</p>
-<p>teaches<span>I</span> = {(Paul, Cs1), (Sara, Tech1), (Andy, Cs1)}, (Pro1, Pro1)},</p>
-<p>Researcher<span>I</span> = {Paul},</p>
-<p>PGC<span>I</span> ={Tech1}</p>
-<p>publishes<span>I</span> = {(Paul, R1)}</p>
+<p>&#916;<sup><i>I</i></sup> = {Paul, Andy, Cs1, Sara, Tech1, R1, Pro1},</br>
+Professor <sup><i>I</i></sup> = {Paul, Sara, Andy, Pro1},</br>
+Course <sup><i>I</i></sup> = {Cs1, Tech1, Pro1},</br>
+Research <sup><i>I</i></sup> = {R1},</br>
+teaches <sup><i>I</i></sup> = {(Paul, Cs1), (Sara, Tech1), (Andy, Cs1)}, (Pro1, Pro1)},</br>
+Researcher <sup><i>I</i></sup> = {Paul},</br>
+PGC <sup><i>I</i></sup> = {Tech1}</br>
+publishes <sup><i>I</i></sup> = {(Paul, R1)}.</p>
 </div>
 </div>
 </br>
 <!-- second -->
-<div class="firstbox" style="display: none" id="2ndS" onclick="myFunction3()">
+<div class="firstbox" style="display: block" id="2ndS" onclick="myFunction3()">
 <h3>Graphical representation</h3>
 <div class="box3">
 <p>"An interpretation is often conveniently drawn as a directed, labelled graph with a node for each element of the interpretation domain and labelled as follows: a node is labelled with all concept names the corresponding element of the interpretation domain belongs to, and we find an edge from one node to another labelled with r if the element corresponding to the latter node is an r-filler of the element corresponding to the former node" [1]. </p> 
@@ -118,42 +117,42 @@ The following is an example of an interpretation <i>I</i> for our university dom
 </div></br>
 <div class="boxE">
 <strong>Example 6:</strong> interpretation <i>I<sub>1</sub></i>:
-<p>&#916;<span>I<sub>1</sub></span> ={Andy, R1, Sara, Paul, Cs1, Pro1, Tech1},</p>
-<p>Professor <sup>I<sub>1</sub></sup> ={Andy, Paul, Sara},</p>
-<p>Course <sup>I<sub>1</sub></sup> = {Cs1, Tech1, R1, Pro1},</p>
-<p>Research <sup>I<sub>1</sub></sup> ={Pro1},</p>
-<p>teaches <sup>I<sub>1</sub></sup> = {(Paul, Tech1), (Andy, Cs1), (Sara, Cs1), (Sara, R1)},</p>
-<p>Researcher <sup>I<sub>1</sub></sup> ={Sara},</p>
-<p>PGC <sup>I<sub>1</sub></sup> ={R1},</p>
-<p>publishes <sup>I<sub>1</sub></sup> ={(Sara, Pro1)}.</p>
+<p>&#916;<sup><i>I<sub>1</sub></i></sup> ={Andy, R1, Sara, Paul, Cs1, Pro1, Tech1},</br>
+Professor <sup><i>I<sub>1</sub></i></sup> ={Andy, Paul, Sara},</br>
+Course <sup><i>I<sub>1</sub></i></sup> = {Cs1, Tech1, R1, Pro1},</br>
+Research <sup><i>I<sub>1</sub></i></sup> = {Pro1},</br>
+teaches <sup><i>I<sub>1</sub></i></sup> = {(Paul, Tech1), (Andy, Cs1), (Sara, Cs1), (Sara, R1)},</br>
+Researcher <sup><i>I<sub>1</sub></i></sup> = {Sara},</br>
+PGC <sup><i>I<sub>1</sub></i></sup> = {R1},</br>
+publishes <sup><i>I<sub>1</sub></i></sup> = {(Sara, Pro1)}.</p>
 </div></br>
 
 <div class="Activity">
 <h4 style="color: #FC4B63">Activity 2</h4>
-<p>Now, on a piece of paper, try to draw a graphical representation of the interpretation <i>I</i><sub>1</sub> in <strong>Example 6</strong> and then check your answer with the following graph.</p>
+<p>Now, on a piece of paper, try to draw a graphical representation of the interpretation <i>I<sub>1</sub></i> in <strong>Example 6</strong> and then check your answer with the following graph.</p>
 <iframe id="frame2div" src="/Users/mariam/Desktop/implementation/Example6.html" width="600" height="430"  frameborder="1">
 </iframe>
 </div> 
 </div></br>
 <!-- third-->
-<div class="thirdbox" style="display: none" id="3rdS">
+<div class="thirdbox" style="display: block" id="3rdS">
 <div class="box3">
 <p><strong>Definition 2:</strong> The interpretation function .<span>I</span> extended to &#x22A4;, &#x22A5; and compound concepts as follows:</p>
-<p>&#x22A4;<span>I</span> = &#916;<span>I</span>,</p>
-<p>&#x22A5;<span>I</span> = &empty;,</p>
-<p>(C &#8851; D)<span>I</span> =C<span>I</span> &#8898; D<span>I</span>,</p>
-<p>(C &#x2294; D)<span>I</span> = C<span>I</span> &#8899; D<span>I</span>,</p>
-<p>(&#172;C)<span>I</span> =  &#916;<span>I</span>/ C<span>I</span>,</p>
-<p>(&#8707;r.C)<span>I</span> = &#123; d &#8712; &#916;<span>I</span> &#8739; there is an e &#8712; &#916;<span>I</span> with (d,e) &#8712; r<span>I</span> and e &#8712; C<span>I</span>&#125;,</p>
-<p>(&#8704;r.C)<span>I</span> = &#123; d &#8712; &#916;<span>I</span> &#8739; for all e &#8712; &#916;<span>I</span>, if (d,e) &#8712; r<span>I</span> then, e &#8712; C<span>I</span>&#125;</p>
+<p>&#x22A4; <span>I</span> = &#916;<span>I</span>,</p>
+<p>&#x22A5; <span>I</span> = &empty;,</p>
+<p>(C &#8851; D) <span>I</span> = C <span>I</span> &#8898; D <span>I</span>,</p>
+<p>(C &#x2294; D) <span>I</span> = C <span>I</span> &#8899; D <span>I</span>,</p>
+<p>(&#172;C) <span>I</span> =  &#916;<span>I</span>/ C <span>I</span>,</p>
+<p>(&#8707;r.C) <span>I</span> = &#123; d &#8712; &#916; <span>I</span> &#8739; there is an e &#8712; &#916; <span>I</span> with (d,e) &#8712; r <span>I</span> and e &#8712; C <span>I</span>&#125;,</p>
+<p>(&#8704;r.C) <span>I</span> = &#123; d &#8712; &#916; <span>I</span> &#8739; for all e &#8712; &#916;<span>I</span>, if (d,e) &#8712; r <span>I</span> then, e &#8712; C <span>I</span>&#125;</p>
 <p>We call</p>
-<p>&bull; C<span>I</span> the extension of C in <i>I</i>,</p>
-<p>&bull; b &#8712; &#916;<span>I</span> an r-filler of a in <i>I</i> if (a,b) &#8712; r<span>I</span> [1]. </p>
+<p>&bull; C <span>I</span> the extension of C in <i>I</i>,</p>
+<p>&bull; b &#8712; &#916;<span>I</span> an r-filler of a in <i>I</i> if (a,b) &#8712; r <span>I</span> [1]. </p>
 </div>
 
 <h3>Extensions</h3>
 <div class="box2">
-<p>Let's look at interpretation <i>I</i> and interpretation <i>I<sub>1</sub></i><span data-tooltip2="" data-tooltip-position2="top">+</span> in Examples 5 and 6. From <strong>Definition 2</strong> we can conclude that:</p>
+<p>Let's look at interpretation <i>I</i> and interpretation <i>I<sub>1</sub></i> <span data-tooltip2="" data-tooltip-position2="top">+</span> in Examples 5 and 6. From <strong>Definition 2</strong> we can conclude that:</p>
  <p>&bull; All elements are in the extension of &#x22A4;, and no element is in the extension of &#x22A5;, </p>
  <p>&bull; Paul, Sara and Andy are in the extension of Professor in both <i>I</i> and <i>I<sub>1</sub></i>, but Pro1 is only a Professor in <i>I</i> (not in <i>I<sub>1</sub></i>).</p>
  <p>&bull; Cs1, Tech1 and Pro1 are in the extension of Course in both <i>I</i> and <i>I<sub>1</sub></i>, but R1 is only a Course in <i>I<sub>1</sub></i>.
@@ -170,12 +169,12 @@ The following is an example of an interpretation <i>I</i> for our university dom
 <p>The following diagram displays elements that are in the extension of some compound concepts in interpretation <i>I</i> <span data-tooltip4="" data-tooltip-position4="top">+</span>. Click on each concept description to see the elements that are in its extension.</p>
  <iframe id="frame3" src="/Users/mariam/Desktop/implementation/Diag.html" width="600" height="430"  frameborder="1" style="background: #FFFFFF">
 </iframe>
-  <p style="text-align: center;">Graph for the interpretation <i>I</i> in example 5</p>
+  <p style="text-align: center;">Graphical representation of the interpretation <i>I</i> in example 5</p>
   </div></br>
 
 <div class="Activity">
 <h4 style="color: #FC4B63">Activity 3</h4>
-<p>From interpretation <i>I<sub>1</sub></i>  in <strong>Example 6</strong>, find the elements that are in the extension of the following concept descriptions:
+<p>From interpretation <i>I<sub>1</sub></i> in <strong>Example 6</strong>, find the elements that are in the extension of the following concept descriptions:
 <ol>
 <li>Professor &#x2293; &#172;Researcher.</li>
 <li> &#8707;teaches.PGC.</li>
