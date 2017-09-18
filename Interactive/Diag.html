@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.rawgit.com/konvajs/konva/1.6.5/konva.min.js"></script>
+  <meta charset="utf-8">
+  <title>Diagram</title>
+  <style>
+
+   <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #F0F0F0;
+        }
+        #selector { height: 355px; width: 505px; position: relative; margin: 0   auto;}
+        #container { height: 280px; width: 500px;  border: solid black 1px; position: relative;  margin: 0   auto;  background-color: white; top:60px;}
+
+        #buttons {
+            
+            position: absolute;
+        top: 0px;
+        display:inline-block;
+        }
+        #play, #reverse{background-color: #FC4B63;
+        color: white; border: none; cursor: pointer;}
+
+        #one,#two,#three,#four,#five,#six,#seven
+        {background-color: white;
+        color: blue; border: none;
+        text-decoration:underline;
+                cursor: pointer;
+
+        }
+        .disbtn{    display:inline-block;
+            padding: 1px;
+}
+    </style>
+
+</head>
+<body>
+  <div id="selector">
+  <div id="buttons">
+    <div class="disbtn"><input type="button" id="play" value="Atomic concepts combined"></div>
+    <div class="disbtn"><input type="button" id="reverse" value="Atomic concepts splitted"></div></br>
+    <div class="disbtn"><input type="button" id="one" value="Professor ⊓ Researcher"></div>
+    <div class="disbtn"><input type="button" id="two" value="Professor ⊓ ¬Course"></div>
+    <input type="button" id="three" value="Professor ⊓ (¬Researcher ⊓ ¬Course)">
+    <div class="disbtn"><input type="button" id="six" value="Professor ⊓ Course"></div>
+    <div class="disbtn"><input type="button" id="four" value="Professor ⊓ ¬Researcher"></div>
+   <div class="disbtn"> <input type="button" id="five" value="Course ⊓ (¬Professor ⊓ ¬PGC)"></div>
+    <div class="disbtn"><input type="button" id="seven" value="Course ⊓ (¬Professor ⊔ PGC)"></div>
+</div>
+  <p id="inst" style="color: blue;"><strong>
+  </strong></p></br></br>
+  <div id="container"></div> </br></br></br>
+</br></br>
+</div>
+
+  <script>
+
+    var stageX = new Konva.Stage({
+        container: 'container',
+        width: 500,
+        height: 300
+    });
+    var layer = new Konva.Layer();
+    var layer2 = new Konva.Layer();
+
+
+//Element_1
+var ProfGroup = new Konva.Group({
+        x:50,
+        y:10,
+        
+    });
+
+var ProfC = new Konva.Ellipse({
+    x: 250,
+    y: 140,
+        radius: {
+            x: 80,
+            y: 110
+        },
+        fill:'rgba(0, 0, 255, 0.27)',
+        stroke: 'gray',
+        strokeWidth: 1
+    });
+var ProfText = new Konva.Text({
+x: 220,
+y:50, 
+fontSize: 14,
+        fontFamily: 'Calibri',
+        fontStyle:'italic',
+        text: 'Professor I',
+        fill: 'blue',
+    });
+var PaulE = new Konva.Circle({
+    x: 270,
+    y: 120,
+        radius: 3,
+        fill: 'black',
+        stroke: 'gray',
+        strokeWidth: 1
+    });
+
+var PaulText = new Konva.Text({
+x: 270,
+y: 100,
+fontSize: 14,
+        fontFamily: 'Calibri',
+        text: 'Paul I',
+        fill: 'black',
+    });
+
+var Paul1E = new Konva.Circle({
+    x: 270,
+    y: 120,
+        radius: 3,
+        fill: 'black',
+        stroke: 'gray',
+        strokeWidth: 1
+    });
+
+var Paul1Text = new Konva.Text({
+x: 270,
+y: 100,
+fontSize: 14,
+        fontFamily: 'Calibri',
+        text: 'Paul I',
+        fill: 'black',
+    });
+
+var AndyE = new Konva.Circle({
+    x: 210,
+    y: 200,
+        radius: 3,
+        fill: 'black',
+        stroke: 'gray',
+        strokeWidth: 1
+    });
+var AndyText = new Konva.Text({
+x: 210,
+y: 180,
+fontSize: 14,
+        fontFamily: 'Calibri',
+        text: 'Andy I',
+        fill: 'black',
+    });
+
+var SaraE = new Konva.Circle({
+    x: 230,
+    y: 230,
+        radius: 3,
+        fill: 'black',
+        stroke: 'gray',
+        strokeWidth: 1
+    });
+var SaraText = new Konva.Text({
+x: 230,
+y: 210,
+fontSize: 14,
+        fontFamily: 'Calibri',
+        text: 'Sara I',
+        fill: 'black',
+    });
+
+var CourseGroup = new Konva.Group({
+x:-25,
+y:0,
+    });
+
+var CourseC = new Konva.Ellipse({
+    x: 130,
+    y: 130,
+        radius: {
+            x: 100,
+            y: 60
+        },
+        fill: 'rgba(250, 128, 114, 0.27)',
+        stroke:'gray',
+        strokeWidth: 1
+    });
+var CourseText = new Konva.Text({
+x: 100,
+y:80, 
+fontSize: 14,
+        fontFamily: 'Calibri',
+        fontStyle:'italic',
+        text: 'Course I',
+        fill: 'blue',
+    });
+
+var Pro1E = new Konva.Circle({
+    x: 190,
+    y: 150,
+        radius: 3,
+        fill: 'black',
+        stroke: 'gray',
+        strokeWidth: 1
+    });
+
+var Pro1Text = new Konva.Text({
+x: 190,
+y: 130,
+fontSize: 14,
+        fontFamily: 'Calibri',
+        text: 'Pro1 I',
+        fill: 'black',
+    });
+var Pro12E = new Konva.Circle({
+    x: 190,
+    y: 150,
+        radius: 3,
+        fill: 'black',
+        stroke: 'gray',
+        strokeWidth: 1
+    });
+
+var Pro12Text = new Konva.Text({
+x: 190,
+y: 130,
+fontSize: 14,
+        fontFamily: 'Calibri',
+        text: 'Pro1 I',
+        fill: 'black',
+    });
+
+
+var Cs1E = new Konva.Circle({
+    x: 70,
+    y: 120,
+        radius: 3,
+        fill: 'black',
+        stroke: 'gray',
+        strokeWidth: 1
+    });
+var Cs1Text = new Konva.Text({
+x: 70,
+y: 100,
+fontSize: 14,
+        fontFamily: 'Calibri',
+        text: 'Cs1 I',
+        fill: 'black',
+    });
+
+var Tech1E = new Konva.Circle({
+    x: 110,
+    y: 170,
+        radius: 3,
+        fill: 'black',
+        stroke: 'gray',
+        strokeWidth: 1
+    });
+var Tech1Text = new Konva.Text({
+x: 110,
+y: 150,
+fontSize: 14,
+        fontFamily: 'Calibri',
+        text: 'Tech1 I',
+        fill: 'black',
+    });
+
+var Tech12E = new Konva.Circle({
+    x: 110,
+    y: 170,
+        radius: 3,
+        fill: 'black',
+        stroke: 'gray',
+        strokeWidth: 1
+    });
+var Tech12Text = new Konva.Text({
+x: 110,
+y: 150,
+fontSize: 14,
+        fontFamily: 'Calibri',
+        text: 'Tech1 I',
+        fill: 'black',
+    });
+
+var PGCGroup = new Konva.Group({
+x:-60,
+y:90,
+});
+
+var PGCC = new Konva.Ellipse({
+    x: 120,
+    y: 150,
+        radius:{ 
+            x:40,
+            y:30,
+        },
+        fill: 'rgba(0, 255, 0, 0.27)',
+        stroke:'gray',
+        strokeWidth: 1
+    });
+
+var PGCCText = new Konva.Text({
+x: 110,
+y: 130,
+fontSize: 14,
+        fontFamily: 'Calibri',
+        fontStyle:'italic',
+        text: 'PGC I',
+        fill: 'blue',
+    });
+
+var ResearcherGroup = new Konva.Group({
+x:100,
+y:-60,
+});
+var ResearcherC = new Konva.Ellipse({
+    x: 320,
+    y: 105,
+        radius:{ 
+            x:70,
+            y:35,
+        },
+        fill: 'rgba(0, 255, 255, 0.27)',
+        stroke: 'gray',
+        strokeWidth: 1
+    });
+
+var ResearcherText = new Konva.Text({
+x: 280,
+y: 80,
+fontSize: 14,
+        fontFamily: 'Calibri',
+        fontStyle:'italic',
+        text: 'Researcher I',
+        fill: 'blue',
+    });
+
+var ResearchGroup = new Konva.Group({
+
+});
+var ResearchC = new Konva.Ellipse({
+    x: 440,
+    y: 210,
+        radius:{ 
+            x:37,
+            y:40,
+        },
+        fill: 'rgba(255, 215, 0, 0.27)',
+        stroke:'gray',
+        strokeWidth: 1
+    });
+
+var ResearchText = new Konva.Text({
+x: 410,
+y: 190,
+fontSize: 14,
+        fontFamily: 'Calibri',
+        fontStyle:'italic',
+        text: 'Research I',
+        fill: 'blue',
+    });
+
+var R1E = new Konva.Circle({
+    x: 430,
+    y: 230,
+        radius: 3,
+        fill: 'black',
+        stroke: 'gray',
+        strokeWidth: 1
+    });
+var R1Text = new Konva.Text({
+x: 430,
+y: 210,
+fontSize: 14,
+        fontFamily: 'Calibri',
+        text: 'R1 I',
+        fill: 'black',
+    });
+
+
+
+
+var Inte1Text = new Konva.Text({
+x: 20,
+y: 20,
+fontSize: 14,
+        fontFamily: 'Calibri',
+        text: ' Δ',
+        fill: 'black',
+    });
+var Inte2Text = new Konva.Text({
+x: 32,
+y: 20,
+fontSize: 14,
+        fontFamily: 'Calibri',
+        text: ' I',
+        fontStyle:'italic',
+        fill: 'black',
+    });
+
+
+
+
+ProfGroup.add(ProfC).add(ProfText).add(AndyE).add(AndyText).add(PaulText).add(PaulE).add(SaraE).add(SaraText).add(Pro12E).add(Pro12Text);
+
+CourseGroup.add(CourseC).add(CourseText).add(Pro1E).add(Pro1Text).add(Cs1Text).add(Cs1E).add(Tech1E).add(Tech1Text);
+
+PGCGroup.add(PGCC).add(PGCCText).add(Tech12Text).add(Tech12E);
+
+ResearchGroup.add(ResearchC).add(ResearchText).add(R1E).add(R1Text);;
+ResearcherGroup.add(ResearcherC).add(ResearcherText).add(Paul1E).add(Paul1Text);
+
+
+layer.add(Inte1Text).add(Inte2Text);
+
+
+
+
+
+//------------------------------- images -------------
+ var BG = new Konva.Image({
+        visible: false,
+        x: 0,
+        y: 0,
+        image: imageObj0,
+        width: 500,
+        height: 280,
+      });
+      layer2.add(BG);
+
+      var PR = new Konva.Image({
+        visible: false,
+        x: 250,
+        y: 70,
+        image: imageObj1,
+        width: 80,
+        height: 70,
+        opacity: 0.40
+      });
+      layer2.add(PR);
+
+    var PNC= new Konva.Image({
+        visible: false,
+        x: 176,
+        y: 30,
+        image: imageObj2,
+        width: 155,
+        height: 220,
+        opacity: 0.25
+
+      });
+      layer2.add(PNC);
+
+      var PAC= new Konva.Image({
+        visible: false,
+        x: 170,
+        y: 78,
+        image: imageObj3,
+        width: 60,
+        height: 105,
+        opacity: 0.40
+
+      });
+      layer2.add(PAC);
+    
+    var PNR= new Konva.Image({
+        visible: false,
+       x: 168,
+        y: 30,
+        image: imageObj4,
+        width: 161,
+        height: 220,
+        opacity: 0.40
+
+      });
+      layer2.add(PNR);
+
+      var CNPNG= new Konva.Image({
+        visible: false,
+        x: 30,
+        y: 70,
+        image: imageObj5,
+        width: 153,
+        height: 120,
+        opacity: 0.40
+
+      });
+      layer2.add(CNPNG);
+
+var PNRNC= new Konva.Image({
+        visible: false,
+        x: 176,
+        y: 30,
+        image: imageObj6,
+        width: 155,
+        height: 220,
+        opacity: 0.40
+
+      });
+      layer2.add(PNRNC);
+
+var CAG= new Konva.Image({
+        visible: false,
+        x: 30,
+        y: 70,
+        image: imageObj7,
+        width: 153,
+        height: 120,
+        opacity: 0.5
+
+      });
+      layer2.add(CAG);
+
+layer.add(PGCGroup);
+layer.add(ProfGroup);
+layer.add(CourseGroup);
+layer.add(ResearchGroup);
+layer.add(ResearcherGroup);
+
+layer2.add(PGCGroup);
+layer2.add(ProfGroup);
+layer2.add(CourseGroup);
+layer2.add(ResearchGroup);
+layer2.add(ResearcherGroup);
+
+
+stageX.add(layer);
+stageX.add(layer2);
+
+var tween1 = new Konva.Tween({
+        node: PGCGroup,
+        duration: 1,
+        x: 0,
+        y: 0,
+    });
+
+var tween2 = new Konva.Tween({
+        node: ResearcherGroup,
+        duration: 1,
+        x: 0,
+        y: 0,
+    });
+
+
+var tween3 = new Konva.Tween({
+        node: CourseGroup,
+        duration: 1,
+        x: 0,
+        y: 0,
+
+    });
+
+    var tween4 = new Konva.Tween({
+        node: ProfGroup,
+        duration: 1,
+        x: 0,
+        y: 0,
+    });
+    var tween5 = new Konva.Tween({
+        node: ResearchGroup,
+        duration: 1,
+        x: -70,
+        y: 0,
+    });
+  
+
+    var imageObj0 = new Image();
+    imageObj0.onload = function() {
+        BG.image(imageObj0);
+        layer2.draw();
+    };
+  imageObj0.src = 'img/BG.png';
+
+ var imageObj1 = new Image();
+    imageObj1.onload = function() {
+        PR.image(imageObj1);
+        layer2.draw();
+
+    };
+
+  imageObj1.src = 'img/PR.png';
+
+    var imageObj2 = new Image();
+    imageObj2.onload = function() {
+        PNC.image(imageObj2);
+        layer2.draw();
+    };
+
+    imageObj2.src = 'img/PNC.png';
+
+    var imageObj3 = new Image();
+    imageObj3.onload = function() {
+
+        PAC.image(imageObj3);
+        layer2.draw();
+      
+    };
+    imageObj3.src = 'img/PAC.png';
+
+    var imageObj4 = new Image();
+    imageObj4.onload = function() {
+        PNR.image(imageObj4);
+        layer2.draw();
+    };
+    imageObj4.src = 'img/PNR.png';
+
+    var imageObj5 = new Image();
+    imageObj5.onload = function() {
+      CNPNG.image(imageObj5);
+        layer2.draw();
+    };
+    imageObj5.src = 'img/CNPNG.png';
+
+var imageObj6 = new Image();
+    imageObj6.onload = function() {
+      PNRNC.image(imageObj6);
+        layer2.draw();
+    };
+    imageObj6.src = 'img/PNRNC.png';
+
+    var imageObj7 = new Image();
+    imageObj7.onload = function() {
+      CAG.image(imageObj7);
+        layer2.draw();
+    };
+    imageObj7.src = 'img/CAG.png';
+
+    document.getElementById('play').addEventListener('click', function() {
+        tween1.play();
+        tween2.play();
+        tween3.play();
+        tween4.play();
+        tween5.play();
+        PR.hide();
+        BG.hide();
+        ResearchGroup.show();
+        ResearcherGroup.show();
+        CourseGroup.show();
+        PGCGroup.show();
+        ProfGroup.show();
+        PNR.hide();
+        PNRNC.hide();
+        PNC.hide();
+        CNPNG.hide();
+        PAC.hide();
+        CAG.hide();
+
+
+    }, false);
+document.getElementById('reverse').addEventListener('click', function() {
+        tween1.reverse();
+        tween2.reverse();
+        tween3.reverse();
+        tween4.reverse();
+        tween5.reverse();
+        PR.hide();
+        BG.hide();
+        ResearchGroup.show();
+        ResearcherGroup.show();
+        CourseGroup.show();
+        PGCGroup.show();
+        ProfGroup.show();
+        PNR.hide();
+        PNRNC.hide();
+        PNC.hide();
+        CNPNG.hide();
+        PAC.hide();
+        CAG.hide();
+
+
+
+    }, false);
+document.getElementById('one').addEventListener('click', function() {
+    ResearchGroup.hide();
+    ResearcherGroup.hide();
+    CourseGroup.hide();
+    PGCGroup.hide();
+    ProfGroup.hide();
+        PNC.hide();
+        BG.show();
+        PR.show();
+        PNR.hide();
+        PNRNC.hide();
+        CNPNG.hide();
+        PAC.hide();
+        CAG.hide();
+
+        layer2.draw();
+
+    }, false);
+document.getElementById('two').addEventListener('click', function() {
+    ResearchGroup.hide();
+    ResearcherGroup.hide();
+    CourseGroup.hide();
+    PGCGroup.hide();
+    ProfGroup.hide();
+
+        BG.show();
+        PR.hide();
+        PNC.show();
+        PNR.hide();
+        PNRNC.hide();
+        CNPNG.hide();
+        PAC.hide();
+        CAG.hide();
+
+        layer2.draw();
+
+
+    }, false);
+document.getElementById('three').addEventListener('click', function() {
+    ResearchGroup.hide();
+    ResearcherGroup.hide();
+    CourseGroup.hide();
+    PGCGroup.hide();
+    ProfGroup.hide();
+        BG.show();
+        PR.hide();
+        PNC.hide();
+        PNR.hide();
+        PNRNC.show();
+        CNPNG.hide();
+        PAC.hide();
+        CAG.hide();
+
+
+        layer2.draw();
+
+    }, false);
+
+document.getElementById('four').addEventListener('click', function() {
+  ResearchGroup.hide();
+    ResearcherGroup.hide();
+    CourseGroup.hide();
+    PGCGroup.hide();
+    ProfGroup.hide();
+        BG.show();
+        PR.hide();
+        PNC.hide();
+        PNR.show();
+        PNRNC.hide();
+        CNPNG.hide();
+        PAC.hide();
+        CAG.hide();
+
+        layer2.draw();
+
+
+    }, false);
+
+
+document.getElementById('five').addEventListener('click', function() {
+    ResearchGroup.hide();
+    ResearcherGroup.hide();
+    CourseGroup.hide();
+    PGCGroup.hide();
+    ProfGroup.hide();
+        BG.show();
+        PR.hide();
+        PNC.hide();
+        PNR.hide();
+        PNRNC.hide();
+        CNPNG.show();
+        PAC.hide();
+        CAG.hide();
+
+
+        layer2.draw();
+
+    }, false);
+
+document.getElementById('six').addEventListener('click', function() {
+    ResearchGroup.hide();
+    ResearcherGroup.hide();
+    CourseGroup.hide();
+    PGCGroup.hide();
+    ProfGroup.hide();
+        BG.show();
+        PR.hide();
+        PNC.hide();
+        PNR.hide();
+        PNRNC.hide();
+        CNPNG.hide();
+        PAC.show();
+        CAG.hide();
+
+        layer2.draw();
+
+    }, false);
+
+document.getElementById('seven').addEventListener('click', function() {
+    ResearchGroup.hide();
+    ResearcherGroup.hide();
+    CourseGroup.hide();
+    PGCGroup.hide();
+    ProfGroup.hide();
+        BG.show();
+        PR.hide();
+        PNC.hide();
+        PNR.hide();
+        PNRNC.hide();
+        CNPNG.hide();
+        PAC.hide();
+        CAG.show();
+
+
+        layer2.draw();
+
+    }, false);
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>An Introduction to Description Logic</title>
+<link href="style.css"" rel="stylesheet" type="text/css">
+
+  <style type="text/css">
+  a{color: blue;
+    cursor: pointer;}
+  </style>
+</head>
+<body>
+<div class="container">
+<header>
+   <h1>An Introduction to Description Logics</h1>
+</header>
+  <nav>
+   <ul class="nav">
+   <li> <a href="index.html">Welcome!</a> </li>
+    <li> <a href="Introduction.html">Introduction</a> </li>
+     <li> <a href="DL_Notation.html">DL Notation</a></li>
+     <li> <a href="Ref.html">References</a></li>
+    </ul>
+   </nav>
+
+   <article>
+<p style="text-align: center;">
+<a href="building_blocks.html" id="displayone">Building Blocks</a>&nbsp; &nbsp;
+<a href="Syntax.html" id="displaytwo">Syntax</a>&nbsp; &nbsp;
+<a  href="Semantics.html" id="displaythree">Semantics</a>&nbsp; &nbsp;
+</p>
+   <div class="BB">
+  <h3> Main building blocks</h3>
+   <div class="box2">
+  <ol>
+  <li><Role>Role names</role> stand for binary relations on elements and can be viewed as binary predicates.
+  <div class=box>
+  <strong>Example 1:</strong> Professor teaches Course; teaches here is a role name that relates Professors to Courses.</div>
+  </br> </br> 
+  <li>Concept names represent sets of elements and can be viewed as unary predicates.</li>
+  <div class=box>
+  <p><strong>Example 2:</strong> Course is a concept name that is interpreted as a set of elements such as Cs1 and Tech1. Professor is another concept name that is interpreted as a set of elements such as Paul and Sara.</p>
+  </ol>
+  </div></br>
+  <div class="notes">
+  <p><strong><i>Note 1:</i></strong></br>
+  To distinguish between the building blocks, we always write role names with lowercase letters and concept names with the first letter in uppercase. </p>
+  </div> </br>
+  <h3>Where to use the building blocks?</h3>
+  <div class="box3">
+  <p>The concepts of a domain are described by <strong><i>concept descriptions</i></strong>,
+which are <i><u>expressions</u></i> that are built from <strong>concept names</strong> and <strong>role names</strong> using <i>constructors</i><span data-tooltip="We will explain constructors later in the syntax." data-tooltip-position="top">?</span>(a set of mathematical symbols e.g. &#x2293;, &#8704;, &#8707;, etc.) provided by the specific DL variant.</p>
+<p><strong>Example 3:</strong> to define the concept of “ Postgraduate students ”, we can use the following <strong><i>concept description:</i></strong></p>
+<p style="color:brown"><strong>Student &#x2293; Postgraduate.</strong></p>
+<p><strong>Example 4:</strong> to define the concept of “ students who like math ”, we can use the following <strong><i>concept description:</i></strong></p>
+<p style="color:brown"><strong>Student &#x2293; &#8707;likes.Math. </strong></p>
+In the previous examples Student, Postgraduate and Math are <strong>concept names</strong>, likes is a <strong>role name</strong> and &#x2293; and &#8707; are <strong>constructors</strong>.
+</div>
+</br>
+<div class="notes">
+<p><strong><i>Note 2:</i></strong></br>
+When we say <i><strong>concept</strong></i>, <i><strong>concept names</strong></i>, and <i><strong>concept descriptions</strong></i> we mean three different things,</br>&bull; <strong>"concept"</strong> means any class of things in the domain we are describing e.g. <strong style="color:brown">the concept of male doctors.</strong></br>&bull; <i><strong>"Concept name"</strong></i> means a term or an atomic concept e.g. <strong style="color:brown">Doctor</strong>.</br>&bull; <i><strong>"Concept description"</strong></i> means expression that describes a concept using a concept name (an atomic concept) with a constructor e.g. <strong style="color:brown">&#172;Doctor</strong>. or a compound concept that is built up from concept names an possibly role names with constructors e.g. <strong style="color:brown">Doctor &#x2293; Male</strong> or <strong style="color:brown">&#8707;likes.Doctor</strong>.</p>
+</div>
+</div></br>
+<a href="DL_Notation.html" id="prev" class="next">prev</a>
+<a href="Syntax.html" id="next" class="next">next</a></br></br>
+</div>
+</article>
+
+<footer>Copyright &copy; <script language="javascript" type="text/javascript">
+var today = new Date()
+var year = today.getFullYear()
+document.write(year)
+</script> </footer>
+</body>
+</html>
