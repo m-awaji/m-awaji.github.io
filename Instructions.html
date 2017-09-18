@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link href="style.css"" rel="stylesheet" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+<style type="text/css">
+  .btn{
+background-color: #FC4B63;
+        color: white; 
+  position: relative;
+margin-left:10px;
+clear:both;
+cursor: pointer;
+}
+.btn1{
+background-color: #FC4B63;
+        color: white; 
+  position: relative;
+  width: 75px;
+margin-left:10px;
+clear:both;
+cursor: pointer;
+}
+#demo{
+border: 1px dashed gray;
+background-color: lightyellow;
+width: 200px;
+}
+</style>
+<head>
+</head>
+<header>
+   <h1>An Introduction to Description Logics</h1>
+</header>
+<body>
+<div class="BB">
+<h3 style="color: green"><strong>General instructions:</strong></h3>
+<p>Please read instructions carefully before starting the exercise.</p>
+<p>&bull; In this study, we want to administer anonymous tests where you answer two exercises before and after the study (we call them pre-test and post-test). At the same time, we want to compare your score in the pre-test with your score in the post-test; without linking them with your confidential data such as name and email.</p>
+<p>&bull; To achieve this, you are asked to generate a random ID, and use it in both tests so that we can match pre-test responses with post-test responses.</p>
+<p>&bull; No one will know what is your ID, so please save it in an accessible place to you to use it later.</p>
+<p style="color:blue"><strong>Now, click the button below to generate your ID.</strong></p>
+<button class="btn" id="code" onclick="randomWholeNum(); this.disabled=true;">Generate ID</button></br>
+<p id="demo" >&#160; &#160; </p>
+<p style="color:blue"><strong>Click save to save the ID to your local computer.</p>
+<button class="btn1" onclick="javascript:demoFromHTML();" style="width: 50;">Save</button>
+
+<script type="text/javascript">
+
+//--------------------------- send to particpant email -------------------
+
+
+
+// --------------------------- create random ID --------------------------
+function randomWholeNum() {
+var x=[];
+var j=Math.floor(Math.random() * 90000) + 10000;
+document.getElementById('demo').innerHTML="Your ID: " +j;
+x.push(j);
+console.log('X='+x);
+  return Math.random();
+}
+
+// --------------------------- save ID in PDF -----------------------------
+var doc = new jsPDF();
+var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+        return true;
+    }
+};
+
+function demoFromHTML() {
+    var pdf = new jsPDF('p', 'pt', 'letter');
+    source = $('#demo')[0];
+    specialElementHandlers = {
+        '#bypassme': function (element, renderer) {
+            return true
+        }
+    };
+    margins = {
+        top: 80,
+        bottom: 60,
+        left: 40,
+        width: 522
+    }; 
+    pdf.fromHTML(
+    source, 
+    margins.left, 
+    margins.top, { 
+        'width': margins.width, 
+        'elementHandlers': specialElementHandlers
+    },
+   
+
+    function (dispose) {
+       
+        pdf.save('MyDLs_ID.pdf');
+    }, margins);
+}
+
+</script>
+
+<p style="color: green; text-zize:14;"><strong>Tests instructions:</strong></p>
+<ol>
+<li>You should spend arounf 30 minutes or less to complete each test.</li>
+<li>Each test contains four multiple choice questions, each with four choices.</li>
+<li>Some questions have multiple answeres, select all answers that apply.</li>
+<li>Answer all questions, then click submit.</li>
+</ol>
+
+<h3>When you are ready, click the following link to start the pre-test, 
+<a class="ptl" href="Pre-test.html">Pre-test.</a></h3>
+</p>
+
+
+</div>
+</div>
+<footer>Copyright &copy; <script language="javascript" type="text/javascript">
+var today = new Date()
+var year = today.getFullYear()
+document.write(year)
+</script> </footer></body></html>
