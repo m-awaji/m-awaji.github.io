@@ -5,7 +5,7 @@
 <link href="style.css"" rel="stylesheet" type="text/css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
-<style type="text/css">                  
+<style type="text/css">
   .btn{
 background-color: #FC4B63;
         color: white; 
@@ -37,10 +37,11 @@ width: 200px;
 <body>
 <div class="BB">
 <h3 style="color: green"><strong>General instructions:</strong></h3>
-<p>Please read instructions carefully before starting the exercise.</p>
-<p>&bull; In this study, we want to administer anonymous tests where you answer two exercises before and after the study (we call them pre-test and post-test). At the same time, we want to compare your score in the pre-test with your score in the post-test; without linking them with your confidential data such as name and email.</p>
-<p>&bull; To achieve this, you are asked to generate a random ID, and use it in both tests so that we can match pre-test responses with post-test responses.</p>
-<p>&bull; No one will know what is your ID, so please save it in an accessible place to you to use it later.</p>
+<h4>Please read instructions carefully before starting the tests.</h4>
+<h4>&bull; In this study, we want to administer anonymous tests where you answer one test before accessing the learning materials and another one after accessing the learning materials (we call the tests pre-test and post-test, respectively).</h4>
+<h4>&bull;At the same time, we want to compare your score in the pre-test with your score in the post-test; without linking them with your confidential data such as name and email.</h4>
+<h4>&bull; To achieve this, you are asked to generate a random ID, and use it in both tests so that we can match pre-test responses with post-test responses.</h4>
+<h4>&bull; No one will know what is your ID, so please save it in an accessible place to you to use it later.</h4>
 <p style="color:blue"><strong>Now, click the button below to generate your ID.</strong></p>
 <button class="btn" id="code" onclick="randomWholeNum(); this.disabled=true;">Generate ID</button></br>
 <p id="demo" >&#160; &#160; </p>
@@ -104,13 +105,17 @@ function demoFromHTML() {
 
 <p style="color: green; text-zize:14;"><strong>Tests instructions:</strong></p>
 <ol>
-<li>You should spend arounf 30 minutes or less to complete each test.</li>
+<li>You should spend around 30 minutes or less to complete each test.</li>
 <li>Each test contains four multiple choice questions, each with four choices.</li>
 <li>Some questions have multiple answeres, select all answers that apply.</li>
-<li>Answer all questions, then click submit.</li>
+<li>Complete <a class="ptl" href="Pre-test.html" target="_blank">Pre-test</a> first, then go to the  <a class="ptl" href="Introduction.html" target="_blank">learning materials</a>. </li>
+<li>Once you have finisished studying the learning materials completed the <a class="ptl" href="Post-test.html" target="_blank">Post-test</a>.</li>
 </ol>
-<a href="index.html" >Back</a></br>
-                    
+
+<a href="index.html">Back</a></br>
+
+
+
 </div>
 </div>
 <footer>Copyright &copy; <script language="javascript" type="text/javascript">
