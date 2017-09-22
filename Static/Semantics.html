@@ -40,11 +40,11 @@ text-align: center; border: 1px solid black;}
 <h3>ALC Semantics</h3>
 <div class="box3">
 <p>Concept names stand for <u><strong>sets</strong></u> of elements but which set is open to intrepretation. To give meaning to concept names and role names, we formalise this notion of an <u><strong>interpretation</strong></u> as a mathematical structure that is based on a <u><strong>set</strong></u> and its <u><strong>domain</strong></u>. Moreover, an interpretation fixes which elements in its domain are in the extension of which concept names, e.g. who is in the <u><strong>extension</strong></u> of Professor .etc.</p>
-<p>The set a concept represents is called its extension. For example, Paul is an element in the extension of Professor and Cs1 is an element in the extension of Course. We often use "s a" as an abbreviation for "is in the extension of", for example, "Paul is a Professor".</p>
+<p>The set a concept represents is called its extension. For example, Paul is an element in the extension of Professor and Cs1 is an element in the extension of Course. We often use "is a" as an abbreviation for "is in the extension of", for example, "Paul is a Professor".</p>
 </div></br>
 
 <div class="box2">
-<p>To formalise the exact meaning of the syntax, we make the use of the semantics that is. based on an <strong><i>interpretation</i></strong>.</br></br>
+<p>To formalise the exact meaning of the syntax, we make the use of the semantics that is based on an <strong><i>interpretation</i></strong>.</br></br>
 The interpretation is a structure that:</p>
 <p>&bull; consists of a non-empty set called <u>interpretation domain</u>.</p>
     
@@ -82,7 +82,7 @@ PGC <sup><i>I</i></sup> = {Tech1}</br>
 publishes <sup><i>I</i></sup> = {(Paul, R1)}.</p>
 </div></br>
 
-<h3 style="color: #008989;">So far we have learned the textual representation of the interpretation. However, we can represent the interpretation in a graphical form. Let us see how in the next part.
+<h3 style="color: #008989;">So far we have learned the textual representation of the interpretation. However, we can represent the interpretation in a graphical form. Let's see how in the next part.
 </h3></div></br>
 <!-- second -->
 <div class="firstbox" style="display: block" id="2ndS" onclick="myFunction3()">
@@ -93,7 +93,7 @@ publishes <sup><i>I</i></sup> = {(Paul, R1)}.</p>
 
 <div class="graphs" align="middle">
 <p>The following graph shows a graphical representation of the interpretation <i>I</i> in <strong>Example 5</strong></p>
- <img src="img/Example5.png" width="530" height="350">
+ <img src="img/Example5.png" width="510" height="330">
 </div>
 
 <div class="box3">
@@ -114,7 +114,8 @@ publishes <sup><i>I<sub>1</sub></i></sup> = {(Sara, Pro1)}.</p>
 <div class="Activity">
 <h4 style="color: #FC4B63">Activity 2</h4>
 <p>Now, on a piece of paper, try to draw a graphical representation of the interpretation <i>I<sub>1</sub></i> in <strong>Example 6</strong> and then check your answer with the following graph.</p>
-<div align="middle">
+<button id="ac3btn" style="background-color: #FC4B63; color:white;" onclick="myFunction1()">Solution</button>
+<div id="E6G" align="middle" visible="none">
 <img src="img/Example6.png" width="510" height="330" >
 </div>
 </div></br></br>
@@ -198,6 +199,11 @@ publishes <sup><i>I<sub>1</sub></i></sup> = {(Sara, Pro1)}.</p>
  function myFunction2() {
     document.getElementById("answers1").innerHTML = "1. Paul and Andy<br>2. Sara.<br> 3. R1, Cs1, Tech1 and Pro1<br> 4. Paul, Andy and Sara. ";
 }
+  <script type="text/javascript">
+    function myFunction1() {
+    E6G.show();
+}
+  </script>
 </script>
 </article>
 
