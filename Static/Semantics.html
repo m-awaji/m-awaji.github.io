@@ -39,7 +39,7 @@ text-align: center; border: 1px solid black;}
 <div class="firstbox">
 <h3>ALC Semantics</h3>
 <div class="box3">
-<p>Concept names stand for <u><strong>sets</strong></u> of elements but which set is open to intrepretation. To give meaning to concept names and role names, we formalise this notion of an <u><strong>interpretation</strong></u> as a mathematical structure that is based on a <u><strong>set</strong></u> and its <u><strong>domain</strong></u>. Moreover, an interpretation fixes which elements in its domain are in the extension of which concept names, e.g. who is in the <u><strong>extension</strong></u> of Professor .etc.</p>
+<p>Concept names stand for <strong>sets</strong> of elements but which set is open to intrepretation. To give meaning to concept names and role names, we formalise this notion of an <strong>interpretation</strong> as a mathematical structure that is based on a <strong>set</strong> called its <strong>domain</strong>. Moreover, an interpretation fixes which elements in its domain are in the extension of which concept names, e.g. who is in the <strong>extension</strong> of Professor .etc.</p>
 <p>The set a concept represents is called its extension. For example, Paul is an element in the extension of Professor and Cs1 is an element in the extension of Course. We often use "is a" as an abbreviation for "is in the extension of", for example, "Paul is a Professor".</p>
 </div></br>
 
@@ -144,7 +144,7 @@ publishes <sup><i>I<sub>1</sub></i></sup> = {(Sara, Pro1)}.</p>
  <p>&bull; Paul, Sara and Andy are in the extension of Professor in both <i>I</i> and <i>I<sub>1</sub></i>, but Pro1 is only a Professor in <i>I</i> (not in <i>I<sub>1</sub></i>).</p>
  <p>&bull; Cs1, Tech1 and Pro1 are in the extension of Course in both <i>I</i> and <i>I<sub>1</sub></i>, but R1 is only a Course in <i>I<sub>1</sub></i>.</p>
  <p>&bull; R1 is in a research only in <i>I</i> and Pro1 is only a research in <i>I<sub>1</sub></i>.
- <p>&bull; If we extend <i>I</i>  and <i>I<sub>1</sub></i> to include compound concepts</strong>, then we can see that, for example in <i>I</i> Paul is in the extension of Professor &#x2293; Researcher, but in <i>I<sub>1</sub></i> only Sara is a Professor and Researcher.</p>
+ <p>&bull; In <i>I</i> Paul is in the extension of Professor &#x2293; Researcher, but in <i>I<sub>1</sub></i> only Sara is a Professor and Researcher.</p>
  <p>&bull; For existential restrictions in <i>I</i>,</br></br> &nbsp; &nbsp;- Paul, Andy, Sara and Pro1 are in the extension of &#8707;teaches.Course,</br></br>&nbsp; &nbsp;- Sara is in the extension of  &#8707;teaches.(Course &#x2293; PGC), and</br></br>&nbsp; &nbsp;- Paul, Andy and Sara are in the extension of &#8707;teaches.&#172;Professor.
  <p>&bull; For value restriction in <i>I</i>,</br></br>
  &nbsp;Sara, Tech1 and Cs1 are in the extension of &#8704;.teaches.PGC, for Sara it is clear, but for Tech1  anf Cs1, this is because</br> they do not have any teaches-fillers, hence their teaches-fillers should satisfy any situation we may assume.</br></br>
@@ -181,10 +181,11 @@ publishes <sup><i>I<sub>1</sub></i></sup> = {(Sara, Pro1)}.</p>
 <li>&#8704;teaches.PGC.</li>
 <li>&#8707;teaches.&#172;PGC.</li>
 </ol>
+<p style="text-align: center;"><strong>Interpretation <i>I<sub>1</sub></i></strong> <span data-tooltip3="" data-tooltip-position3="top">+</span> </p>
+
 <button id="ac1btn" style="background-color: #FC4B63; color:white;" onclick="myFunction2()">Solution</button>
 
 <p id="answers1"></p>
-<p style="text-align: center;"><strong>Interpretation <i>I<sub>1</sub></i></strong> <span data-tooltip3="" data-tooltip-position3="top">+</span> </p>
 </div>
 </div></br></br>
 <h2 style="color: #008989;text-align: center;">Great! we almost done!</h2><h3 style="color: #008989;text-align: center;">What is remaining?</h3>
