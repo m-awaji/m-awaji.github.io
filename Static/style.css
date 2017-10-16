@@ -48,7 +48,7 @@ article {
 div.box 
 {
     background-color: #e7f3fe;
-    width: 700px;
+    width: 80%;
     border: 2px solid gray;
     padding: 10px;
     margin: 10px;
@@ -74,7 +74,7 @@ iframe {
     display: block;
     margin: auto;
 }
-.notes{width: 800px;
+.notes{width: 85%;
 margin: 10px;
 padding: 4px 12px; 
 background-color: #ffffcc;
@@ -127,7 +127,7 @@ font-style: italic;
 div.boxE 
 {
     background-color: #e7f3fe;
-    width: 800px;
+    width: 85%;
     border: 2px solid gray;
     padding: 10px;
     margin: 10px;
@@ -136,7 +136,7 @@ div.boxE
 div.box1 
 {
     background-color: rgba(255, 226, 209, 0.5);
-    width: 800px;
+    width: 85%;
     border: 2px solid gray;
     padding: 10px;
     margin: 10px;
@@ -145,24 +145,24 @@ div.box1
 div.box2 
 {
     background-color: rgba(255, 226, 209, 0.5);
-    width: 800px;
+    width: 85%;
     border: 2px solid rgba(128, 128, 128, 0.6);
     padding: 10px;
     margin: 10px;
 }
 
 div.graphs{ 
-    width: 800px;
+    width: 85%;
     padding: 10px;
     margin: 10px;}
     
 div.Activity{ border: 2px dashed #008989;
-width: 815px;
+width: 87%;
   padding: 10px;
     margin: 10px;}
 div.box3
 {
-  width: 780px;
+  width: 78%;
   padding: 10px 20px;
   margin: 10px;
   background-color: rgba(223, 248, 235, 0.5);
@@ -200,7 +200,7 @@ border-left: 1.5px solid #CCCCCC;}
 
 
 #frameblock{display: block;
-widows: 100%;
+widows: 85%;
 height: 100%;}
 
 #frame4,#frame5,#frame6,#frame7{display: inline-block;
@@ -279,6 +279,7 @@ box-sizing: border-box;}
 }
 .BB{
   position: relative;
+    width: 90%;
   max-width: 1000px;
   height: auto;
   margin: 20px auto;
@@ -293,6 +294,7 @@ padding: 10px;
 
 .firstbox {
   position: relative;
+        width: 90%;
   max-width: 1000px;
   height: auto;
   border: 2px solid rgba(252, 75, 99,.50);
@@ -309,6 +311,7 @@ padding: 10px;
 }
 .thirdbox {
   position: relative;
+        width: 90%;
   max-width: 1000px;
   height: auto;
   border: 2px solid rgba(252, 75, 99,.50);
