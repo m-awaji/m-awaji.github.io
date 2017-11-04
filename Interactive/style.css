@@ -22,6 +22,8 @@ ul {
 }
 
 ul a{
+    position: fixed;
+    top:17%;
 display:block;
 padding-top:7px;
 background-color: #FC4B63;
