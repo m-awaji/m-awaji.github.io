@@ -13,7 +13,7 @@ header, footer {
     text-align: center;
 }
 ul {
-     position: fixed;
+    position: fixed;
     top:17%;
     text-align:center;
     margin-right:1%;
@@ -23,7 +23,6 @@ ul {
 }
 
 ul a{
-   
 display:block;
 padding-top:7px;
 background-color: #FC4B63;
@@ -40,6 +39,7 @@ color: #3C4148;
 border: none;
 
 }
+
 
 article {
     margin-left: 170px;
