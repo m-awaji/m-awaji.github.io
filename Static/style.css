@@ -13,7 +13,8 @@ header, footer {
     text-align: center;
 }
 ul {
-    top:3px;
+    position: fixed;
+    top:17%;
     text-align:center;
     margin-right:1%;
     margin-left:-30px;
